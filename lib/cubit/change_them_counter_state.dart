@@ -14,13 +14,21 @@ class ThemeChanged extends ChangeThemCounterState {
 
 class ThemeCounted extends ChangeThemCounterState {
   late int add;
+  bool what;
   ThemeMode nowTheme;
   ThemeCounted({
     required this.nowTheme,
+    required this.what,
   }) {
-    if (nowTheme == ThemeMode.dark)
+    if (nowTheme == ThemeMode.dark) if (what) {
       add = 2;
-    else
+    } else {
+      add = -2;
+    }
+    else if (what) {
       add = 1;
+    } else {
+      add = -1;
+    }
   }
 }

@@ -53,6 +53,12 @@ class body extends StatefulWidget {
   State<body> createState() => _bodyState();
 }
 
+// ElevatedButton(
+//     onPressed: () => context.read<ChangeThemCounter>().countheme(
+//         Theme.of(context).brightness == Brightness.light
+//             ? ThemeMode.light
+//             : ThemeMode.dark),
+//     child: Text("Прибавить значение")),
 class _bodyState extends State<body> {
   int nowValue = 0;
   List<String> nowValues = [];
@@ -71,11 +77,28 @@ class _bodyState extends State<body> {
                         : ThemeMode.light),
                 child: Text("Изменить тему")),
             ElevatedButton(
-                onPressed: () => context.read<ChangeThemCounter>().countheme(
-                    Theme.of(context).brightness == Brightness.light
-                        ? ThemeMode.light
-                        : ThemeMode.dark),
+                onPressed: () {
+                  context.read<ChangeThemCounter>().countheme(
+                      Theme.of(context).brightness == Brightness.light
+                          ? ThemeMode.light
+                          : ThemeMode.dark,
+                      true);
+                },
                 child: Text("Прибавить значение")),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  context.read<ChangeThemCounter>().countheme(
+                      Theme.of(context).brightness == Brightness.light
+                          ? ThemeMode.light
+                          : ThemeMode.dark,
+                      false);
+                },
+                child: Text("Убавить значение")),
           ],
         ),
         BlocListener<ChangeThemCounter, ChangeThemCounterState>(

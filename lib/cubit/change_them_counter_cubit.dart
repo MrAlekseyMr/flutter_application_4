@@ -7,8 +7,8 @@ part 'change_them_counter_state.dart';
 class ChangeThemCounter extends Cubit<ChangeThemCounterState> {
   ChangeThemCounter() : super(ChangeThemCounterInitial());
 
-  void countheme(ThemeMode themeMode) {
-    emit(ThemeCounted(nowTheme: themeMode));
+  void countheme(ThemeMode themeMode, bool what) {
+    emit(ThemeCounted(nowTheme: themeMode, what: what));
   }
 
   void changeTheme(ThemeMode themeMode) {

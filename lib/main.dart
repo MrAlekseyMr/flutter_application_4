@@ -150,7 +150,7 @@ class _BodyState extends State<body> {
         ],
       ),
       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Center(child: Text("Текущее значение: ")),
+        Center(child: Text("Текущее значние: ")),
         Center(child: Text(currentValue.toString()))
       ]),
       BlocListener<ChangeThemCounter, ChangeThemCounterState>(

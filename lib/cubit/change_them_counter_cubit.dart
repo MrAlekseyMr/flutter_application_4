@@ -7,11 +7,15 @@ part 'change_them_counter_state.dart';
 class ChangeThemCounter extends Cubit<ChangeThemCounterState> {
   ChangeThemCounter() : super(ChangeThemCounterInitial());
 
-  void countheme(ThemeMode themeMode, bool what) {
-    emit(ThemeCounted(nowTheme: themeMode, what: what));
+  void changeTheme(ThemeMode themeMode) {
+    emit(ChangeThemCounterChangedState(theme: themeMode));
   }
 
-  void changeTheme(ThemeMode themeMode) {
-    emit(ThemeChanged(nowTheme: themeMode));
+  void themtadddegr(ThemeMode themeMode, bool isDescreasing) {
+    var currentValue = themeMode == ThemeMode.light ? 1 : 2;
+    if (isDescreasing) {
+      currentValue = currentValue * -1;
+    }
+    emit(ChangeThemCounterAddedState(theme: themeMode, valu: currentValue));
   }
 }

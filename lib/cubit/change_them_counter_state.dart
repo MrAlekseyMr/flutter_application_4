@@ -5,30 +5,15 @@ abstract class ChangeThemCounterState {}
 
 class ChangeThemCounterInitial extends ChangeThemCounterState {}
 
-class ThemeChanged extends ChangeThemCounterState {
-  ThemeMode nowTheme;
-  ThemeChanged({
-    required this.nowTheme,
+class ChangeThemCounterChangedState extends ChangeThemCounterState {
+  ThemeMode theme;
+  ChangeThemCounterChangedState({
+    required this.theme,
   });
 }
 
-class ThemeCounted extends ChangeThemCounterState {
-  late int add;
-  bool what;
-  ThemeMode nowTheme;
-  ThemeCounted({
-    required this.nowTheme,
-    required this.what,
-  }) {
-    if (nowTheme == ThemeMode.dark) if (what) {
-      add = 2;
-    } else {
-      add = -2;
-    }
-    else if (what) {
-      add = 1;
-    } else {
-      add = -1;
-    }
-  }
+class ChangeThemCounterAddedState extends ChangeThemCounterState {
+  ThemeMode theme;
+  int valu;
+  ChangeThemCounterAddedState({required this.theme, required this.valu});
 }

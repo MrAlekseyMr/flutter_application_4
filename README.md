@@ -1,16 +1,45 @@
-# flutter_application_4
+# Практическая работа №4
 
-A new Flutter project.
+## Тема: Cubit
 
-## Getting Started
+## Цель работы: реалреализовать кликер если светлая тема за клик прибавляет +1 если темная тема прибавляется +2. Реализовать список нажатий и при какой теме это было реализовано. Все должно находиться на одном экране
 
-This project is a starting point for a Flutter application.
+## Ход работы: 
 
-A few resources to get you started if this is your first Flutter project:
+1.	Добавим необходимую зависимость для работы с Cubit:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Изображение с Imgur. Пункт 1](https://i.imgur.com/RPmqpvh.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2.	Также установим расширение в Visual Studio Code для работы с зависимостью Bloc:
+
+![Изображение с Imgur. Пункт 2](https://i.imgur.com/gdm1tat.png)
+
+3.	В созданном проекте создадим в папке lib cubit и назовём его ChangeThemCounter:
+
+![Изображение с Imgur. Пункт 3](https://i.imgur.com/LPQWlVc.png)
+
+4.	В созданном файле change_them_counter_state пропишем следующей код, который при изменении темы будет записывать новую тему, а при добавлении значения будет в зависимости от темы прибавлять 1 или 2:
+
+![Изображение с Imgur. Пункт 4](https://i.imgur.com/3XV2Ke0.png)
+
+5.	А в файле change_them_counter_cubit пропишем следующее:
+
+![Изображение с Imgur. Пункт 5](https://i.imgur.com/cGm68j8.png)
+
+6.	Перейдём к файлу main.dart и пропишем во время build, чтобы возвращался BlockBuilder:
+
+![Изображение с Imgur. Пункт 6](https://i.imgur.com/zjo2Csl.png)
+
+7.	Затем создадим класс body StatefulWidget:
+
+![Изображение с Imgur. Пункт 7](https://i.imgur.com/VlvhEWn.png)
+
+8.	И затем уже создадим _bodyState, в котором будет основная вёрстка, где сверху в Row будут две кнопки, осуществляющие смену темы и добавления значения, а также лог нажатий на кнопку добавления значения, где будет выводится текущая тема и значение кликера:
+
+![Изображение с Imgur. Пункт 8](https://i.imgur.com/jXq3Eb7.png)
+
+9.	В результате получилось следующее:
+
+![Изображение с Imgur. Пункт 9](https://i.imgur.com/Vg9DZoG.png)
+
+## Вывод: в рамках данной практической работы были получены навыки в работе с Cubit в языке программирования Dart. Разработан кликер, который в зависимости от выбранной темы приложения прибавляет значение 1 или 2.
